@@ -1,5 +1,36 @@
--------------------------Assignment-2 --------------------------------
+-------------------------Assignment--------------------------------
 
+
+CREATE TABLE department (
+	   Deptno INT PRIMARY KEY,
+	   Dname VARCHAR(20) UNIQUE,
+	   Location VARCHAR(20) NOT NULL,
+	   CHECK(Dname IN('Delhi','Pune','Agra'))
+	   );
+
+CREATE TABLE Employee(
+	  empno VARCHAR(5) PRIMARY KEY,
+	  Ename VARCHAR(20) UNIQUE,
+	  Designation VARCHAR(20) NOT NULL,
+	  salary NUMERIC(10,0) DEFAULT 25000,
+	  DOB date NOT NULL,
+	  Dno INT  references department(Deptno),
+	  CHECK(salary BETWEEN 15000 AND 50000),
+	  CHECK(Empno like 'E%')
+	 
+);
+
+CREATE TABLE Candidate(
+	  candidate_id INT PRIMARY KEY ,
+	  candidate_name VARCHAR(20) NOT NULL,
+	  candidate_email 	VARCHAR(30) UNIQUE NOT NULL,
+	  candidate_dept varchar(2) DEFAULT 'HR',
+	  manager_id INT REFERENCES candidate(candidate_id),
+	  CHECK(candidate_email like '%@%.%')
+);
+
+
+---another table and question
  CREATE TABLE college(
 	 cName VARCHAR(10),
 	 state 	VARCHAR(10),
