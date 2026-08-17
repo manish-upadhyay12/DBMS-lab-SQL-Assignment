@@ -1,4 +1,4 @@
--------------------------Assignment--------------------------------
+----==================Assignment ------------------------
 
 
 CREATE TABLE department (
@@ -18,7 +18,8 @@ CREATE TABLE Employee(
 	  CHECK(salary BETWEEN 15000 AND 50000),
 	  CHECK(Empno like 'E%')
 	 
-);
+);  
+
 
 CREATE TABLE Candidate(
 	  candidate_id INT PRIMARY KEY ,
